@@ -1,0 +1,134 @@
+@page
+@model MyFirstWebApp1.Pages.StudentRegistrationModel
+@{
+    ViewData["Title"] = "Student Registration";
+}
+
+<h2>School Registration Form</h2>
+<div class="form-wrapper">
+    <form method="post" id="registrationForm">
+        @* Only show Registration ID when editing *@
+        @if (!string.IsNullOrEmpty(Model.Student.Id))
+        {
+            <div>
+                <label>Registration ID:</label>
+                <input asp-for="Student.Id" class="form-control" readonly />
+            </div>
+        }
+        @* @if (!string.IsNullOrEmpty(Model.Student.Id))
+        {
+            <input type="hidden" asp-for="Student.Id" />
+        }
+        <div> <label>Registration ID:</label>
+            <input value="@Model.Student.RegistrationID" class="form-control" readonly />
+        </div> *@
+        <div>
+            <label asp-for="Student.SchoolName">School Name:</label>
+            <select asp-for="Student.SchoolName" class="form-control">
+                <option value="">--- Select School Name ---</option>
+                <option value="Banglore HighSchool">Banglore HighSchool</option>
+                <option value="Mysore HighSchool">Mysore HighSchool</option>
+            </select>
+            <span asp-validation-for="Student.SchoolName" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="Student.ClassName">Class Name:</label>
+            <select asp-for="Student.ClassName" class="form-control">
+                <option value="">--- Select Class ---</option>
+                <option value="Class 8">Class 8</option>
+                <option value="Class 9">Class 9</option>
+                <option value="Class 10">Class 10</option>
+            </select>
+            <span asp-validation-for="Student.ClassName" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Student.StudentName">Student Name:</label>
+            <input asp-for="Student.StudentName" class="form-control" />
+            <span asp-validation-for="Student.StudentName" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="Student.DateOfBirth">Date of Birth:</label>
+            <input asp-for="Student.DateOfBirth" class="form-control" type="date" />
+            <span asp-validation-for="Student.DateOfBirth" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="Student.Gender">Gender:</label>
+            <select asp-for="Student.Gender" class="form-control">
+                <option value="">--- Select Gender ---</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <span asp-validation-for="Student.Gender" class="text-danger"></span>
+
+        </div>
+
+        <div>
+            <label asp-for="Student.ContactNumber">Contact Number:</label>
+            <input asp-for="Student.ContactNumber" class="form-control" />
+            <span asp-validation-for="Student.ContactNumber" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label>Country:</label>
+            <input asp-for="Student.Address.Country" class="form-control" />
+        </div>
+
+        <div>
+            <label>State:</label>
+            <input asp-for="Student.Address.State" class="form-control" />
+        </div>
+
+        <div>
+            <label>City:</label>
+            <input asp-for="Student.Address.City" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">
+            @(string.IsNullOrEmpty(Model.Student.Id) ? "Register" : "Update")
+
+        </button>
+    </form>
+</div> @if (TempData["SuccessMessage"] != null) {
+<div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+<h3>Registered Students</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>School</th>
+            <th>Class</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Contact</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody> @foreach (var student in Model.StudentList) {
+        <tr>
+            <td>@student.Id</td>
+            <td>@student.StudentName</td>
+            <td>@student.SchoolName</td>
+            <td>@student.ClassName</td>
+            <td>@student.DateOfBirth.ToString("dd-MM-yyyy")</td>
+            <td>@student.Gender</td>
+            <td>@student.ContactNumber</td>
+            <td>
+                <form method="get" style="display:inline;"> <input type="hidden" name="id" value="@student.Id" />
+                    <button formaction="?handler=Edit" class="btn btn-warning">Edit</button>
+                </form>
+
+                <form method="post" style="display:inline;">
+                    <input type="hidden" name="id" value="@student.Id" />
+                    <button formaction="?handler=Delete" formmethod="post" class="btn btn-danger"
+                        onclick="return confirm('Are you sure you want to delete this student?');">Delete</button>
+                </form>
+            </td>
+        </tr>
+                }
+    </tbody>
+</table>

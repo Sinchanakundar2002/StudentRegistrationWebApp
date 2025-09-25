@@ -1,0 +1,98 @@
+﻿/* Cleaned & Corrected styles.css */
+
+/* Reset and base layout */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #509cbe; /* Light blue */
+}
+
+
+/* Flexbox wrapper to center content */
+.form-wrapper {
+    display: flex;
+    justify-content: center;  /* Horizontal centering */
+    align-items: center;      /* Vertical centering */
+    height: 60vh;            /* Full screen height */
+}
+
+/* Form container */
+#registrationForm {
+    background-color: rgb(227, 231, 233);
+    max-width: 400px;
+    width: 100%;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form title */
+h2 {
+    text-align: center;
+    margin-top: 0; 
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #333;
+}
+h3 {
+    text-align: center;
+    margin-top: 0; 
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: #333;
+}
+
+/* Label styling */
+form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Input and select fields */
+form input[type="text"],
+form select {
+    width: 100%;
+    display: block;
+   
+    padding: 6px 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus,
+form select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Multi-select specific */
+form select[multiple] {
+    height: auto;
+    min-height: 100px;
+}
+
+/* Submit button styling */
+form button {
+    display: block;
+    width: 60%;
+    margin: 8px auto 0 auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}

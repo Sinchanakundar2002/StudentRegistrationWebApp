@@ -1,0 +1,130 @@
+[
+  {
+    "Id": "2025001",
+    "RegistrationID": "STD2025001",
+    "SchoolName": "Banglore HighSchool",
+    "ClassName": "Class 9",
+    "StudentName": "Ranjith",
+    "DateOfBirth": "2002-01-01T00:00:00",
+    "Gender": "Female",
+    "ContactNumber": "8738621640",
+    "Address": {
+      "Country": "India",
+      "State": "Maharastra",
+      "City": "Karla"
+    },
+    "Status": "Active"
+  },
+  {
+    "Id": "2025002",
+    "RegistrationID": "STD2025002",
+    "SchoolName": "Banglore HighSchool",
+    "ClassName": "Class 9",
+    "StudentName": "Divakar",
+    "DateOfBirth": "2002-01-01T00:00:00",
+    "Gender": "Male",
+    "ContactNumber": "9482373310",
+    "Address": {
+      "Country": "India",
+      "State": "Karnataka",
+      "City": "Udupi"
+    },
+    "Status": "Active"
+  },
+  {
+    "Id": "2025003",
+    "RegistrationID": "STD2025003",
+    "SchoolName": "Mysore HighSchool",
+    "ClassName": "Class 8",
+    "StudentName": "Sinchana K",
+    "DateOfBirth": "2002-01-01T00:00:00",
+    "Gender": "Female",
+    "ContactNumber": "08738621640",
+    "Address": {
+      "Country": "India",
+      "State": "Maharastra",
+      "City": "Karla"
+    },
+    "Status": "Deleted"
+  },
+  {
+    "Id": "2025004",
+    "RegistrationID": "STD2025004",
+    "SchoolName": "Mysore HighSchool",
+    "ClassName": "Class 9",
+    "StudentName": "Divya Suvarna",
+    "DateOfBirth": "0001-01-01T00:00:00",
+    "Gender": "Female",
+    "ContactNumber": "8738621640",
+    "Address": {
+      "Country": "India",
+      "State": "Maharastra",
+      "City": "Karla"
+    },
+    "Status": "Active"
+  },
+  {
+    "Id": "2025005",
+    "RegistrationID": "STD2025005",
+    "SchoolName": "Mysore HighSchool",
+    "ClassName": "Class 8",
+    "StudentName": "Rahul Kumar",
+    "DateOfBirth": "2017-03-15T00:00:00",
+    "Gender": "Male",
+    "ContactNumber": "8738621640",
+    "Address": {
+      "Country": "India",
+      "State": "Karnataka",
+      "City": "Shivmogga"
+    },
+    "Status": "Active"
+  },
+  {
+    "Id": "2025006",
+    "RegistrationID": "STD2025006",
+    "SchoolName": "Banglore HighSchool",
+    "ClassName": "Class 8",
+    "StudentName": "Sinchana K",
+    "DateOfBirth": "2018-01-09T00:00:00",
+    "Gender": "Female",
+    "ContactNumber": "7738621640",
+    "Address": {
+      "Country": "India",
+      "State": "Maharastra",
+      "City": "Karla"
+    },
+    "Status": "Deleted"
+  },
+  {
+    "Id": "2025007",
+    "RegistrationID": "STD2025007",
+    "SchoolName": "Mysore HighSchool",
+    "ClassName": "Class 9",
+    "StudentName": "Sinchana Suvarna",
+    "DateOfBirth": "2010-01-01T00:00:00",
+    "Gender": "Female",
+    "ContactNumber": "9938621640",
+    "Address": {
+      "Country": "India",
+      "State": "Maharastra",
+      "City": "Brahmavara"
+    },
+    "Status": "Active"
+  },
+  {
+    "Id": "2025008",
+    "RegistrationID": "STD2025008",
+    "SchoolName": "Banglore HighSchool",
+    "ClassName": "Class 8",
+    "StudentName": "Nikitha",
+    "DateOfBirth": "2011-10-26T00:00:00",
+    "Gender": "Female",
+    "ContactNumber": "9472748323",
+    "Address": {
+      "Country": "India",
+      "State": "Karnataka",
+      "City": "Mandya"
+    },
+    "Status": "Active"
+  }
+]
