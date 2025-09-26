@@ -1,25 +1,16 @@
-# =============================
-# 1. Build stage
-# =============================
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
-WORKDIR /src
+# Use Windows-based .NET SDK image
+FROM mcr.microsoft.com/dotnet/sdk:9.0-windowsservercore-ltsc2022
+WORKDIR C:\app
 
-# Copy csproj and restore dependencies
-COPY *.csproj ./
-RUN dotnet restore
-
-# Copy the rest of the code
+# Copy the entire project
 COPY . ./
 
-# Publish the app to /app folder
-RUN dotnet publish -c Release -o /app/publish
+# Restore dependencies and publish the app
+RUN dotnet restore
+RUN dotnet publish -c Release -o C:\app\publish
 
-# =============================
-# 2. Runtime stage
-# =============================
-FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
-WORKDIR /app
-COPY --from=build /app/publish ./
+# Set working directory to published output
+WORKDIR C:\app\publish
 
 # Expose port 8080
 EXPOSE 8080
