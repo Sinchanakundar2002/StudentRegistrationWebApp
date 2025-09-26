@@ -2,18 +2,21 @@
 FROM mcr.microsoft.com/dotnet/sdk:9.0-windowsservercore-ltsc2022
 WORKDIR C:\app
 
-# Copy the entire project
-COPY . ./
-
-# Restore dependencies and publish the app
+# Copy csproj and restore first (better caching)
+COPY *.csproj .\
 RUN dotnet restore
+
+# Copy the rest of the project
+COPY . .\
+
+# Publish the app
 RUN dotnet publish -c Release -o C:\app\publish
 
-# Set working directory to published output
+# Switch to publish folder
 WORKDIR C:\app\publish
 
-# Expose port 8080
+# Expose port
 EXPOSE 8080
 
-# Start the app
+# Run the app
 ENTRYPOINT ["dotnet", "MyFirstWebApp1.dll"]
